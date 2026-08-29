@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerDisha — Padhai aur Career ki Sahi Disha</title>
+<meta name="description" content="Indian students ke liye practical study tips, exam preparation strategies, aur career guidance — bina bakwas ke, seedha kaam ki baat.">
+<style>
+  :root{
+    --ink:#1B2A4A;
+    --ink-soft:#3D4E71;
+    --paper:#F6F3EC;
+    --paper-line:#DCD5C4;
+    --saffron:#D9720B;
+    --saffron-deep:#B85C04;
+    --leaf:#3F6B4A;
+    --white:#FFFDF9;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Segoe UI', 'Noto Sans Devanagari', system-ui, sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:Georgia, 'Noto Serif Devanagari', serif;
+    color:var(--ink);
+    font-weight:700;
+  }
+  a{color:var(--saffron-deep); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  header{
+    background:var(--ink);
+    color:var(--white);
+    padding:1.2rem 1.5rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky; top:0; z-index:10;
+    box-shadow:0 2px 12px rgba(0,0,0,0.15);
+  }
+  .logo{
+    font-family:Georgia, serif;
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing:0.3px;
+  }
+  .logo span{color:var(--saffron);}
+  nav a{
+    color:var(--white);
+    margin-left:1.5rem;
+    font-size:0.95rem;
+    opacity:0.9;
+  }
+  nav a:hover{opacity:1; text-decoration:none; border-bottom:2px solid var(--saffron);}
+  .hero{
+    max-width:900px;
+    margin:0 auto;
+    padding:4rem 1.5rem 3rem;
+    text-align:left;
+    border-bottom:1px dashed var(--paper-line);
+  }
+  .hero .eyebrow{
+    color:var(--saffron-deep);
+    font-weight:600;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    font-size:0.8rem;
+    margin-bottom:0.8rem;
+    display:block;
+  }
+  .hero h1{
+    font-size:2.6rem;
+    line-height:1.25;
+    margin-bottom:1rem;
+    max-width:750px;
+  }
+  .hero p{
+    font-size:1.15rem;
+    color:var(--ink-soft);
+    max-width:620px;
+  }
+  main{max-width:900px; margin:0 auto; padding:2rem 1.5rem 5rem;}
+  .section-title{
+    font-size:1.1rem;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--saffron-deep);
+    margin:3rem 0 1.5rem;
+    padding-bottom:0.5rem;
+    border-bottom:2px solid var(--ink);
+    display:inline-block;
+  }
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:1.5rem;
+    margin-bottom:2rem;
+  }
+  .card{
+    background:var(--white);
+    border:1px solid var(--paper-line);
+    border-radius:4px;
+    padding:1.5rem;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(27,42,74,0.1);
+  }
+  .card .tag{
+    font-size:0.75rem;
+    color:var(--leaf);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+  .card h3{
+    font-size:1.2rem;
+    margin:0.5rem 0 0.6rem;
+    line-height:1.4;
+  }
+  .card p{color:var(--ink-soft); font-size:0.95rem;}
+  .card a.read{
+    display:inline-block;
+    margin-top:0.8rem;
+    font-weight:600;
+    font-size:0.9rem;
+  }
+  article{
+    background:var(--white);
+    border:1px solid var(--paper-line);
+    border-radius:4px;
+    padding:2.5rem;
+    margin-bottom:2.5rem;
+    scroll-margin-top:80px;
+  }
+  article .tag{
+    font-size:0.75rem;
+    color:var(--leaf);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+  article h2{font-size:1.8rem; margin:0.6rem 0 1.2rem;}
+  article h3{font-size:1.25rem; margin:1.5rem 0 0.6rem; color:var(--ink);}
+  article p{margin-bottom:1rem; color:var(--ink-soft);}
+  article ul, article ol{margin:0 0 1rem 1.3rem; color:var(--ink-soft);}
+  article li{margin-bottom:0.5rem;}
+  .back-top{
+    display:inline-block;
+    margin-top:1rem;
+    font-size:0.85rem;
+    color:var(--saffron-deep);
+  }
+  .divider{
+    width:60px; height:4px; background:var(--saffron);
+    margin:0.4rem 0 1.5rem; border-radius:2px;
+  }
+  footer{
+    background:var(--ink);
+    color:var(--white);
+    text-align:center;
+    padding:2rem 1.5rem;
+    font-size:0.9rem;
+    opacity:0.85;
+  }
+  footer a{color:var(--saffron);}
+  @media (max-width:600px){
+    .hero h1{font-size:2rem;}
+    nav a{margin-left:0.8rem; font-size:0.85rem;}
+    article{padding:1.5rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Career<span>Disha</span></div>
+  <nav>
+    <a href="#articles">Articles</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">Padhai • Career • Sahi Faisle</span>
+  <h1>Bina bakwas ke, seedha kaam ki baat — Indian students ke liye.</h1>
+  <p>Exam ki taiyari, career ke faisle, aur productivity — jo cheezein school-college mein koi nahi sikhata, wahi yahan milegi. Har article real, practical aur free.</p>
+</div>
+
+<main>
+  <h2 class="section-title" id="articles">Latest Articles</h2>
+
+  <div class="card-grid">
+    <div class="card">
+      <span class="tag">Exam Prep</span>
+      <h3>Bina Coaching ke SSC/Bank Exam ki Taiyari Kaise Karein</h3>
+      <p>Self-study se bhi selection possible hai — agar strategy sahi ho. Poora roadmap yahan.</p>
+      <a class="read" href="#article-1">Poora Padhein →</a>
+    </div>
+    <div class="card">
+      <span class="tag">Career</span>
+      <h3>Freshers ke liye Resume Kaise Banayein (2026 Guide)</h3>
+      <p>Ek achha resume interview call dilwata hai. Yahan hai step-by-step tarika.</p>
+      <a class="read" href="#article-2">Poora Padhein →</a>
+    </div>
+    <div class="card">
+      <span class="tag">Productivity</span>
+      <h3>Padhte Waqt Phone se Distraction Kaise Roken</h3>
+      <p>Sabse bada dushman — phone. Isse control karne ke practical tarike.</p>
+      <a class="read" href="#article-3">Poora Padhein →</a>
+    </div>
+    <div class="card">
+      <span class="tag">Career</span>
+      <h3>Government Job vs Private Job — Kaunsa Behtar Hai?</h3>
+      <p>Dono ke fayde-nuksaan, taaki aap apne liye sahi faisla le sakein.</p>
+      <a class="read" href="#article-4">Poora Padhein →</a>
+    </div>
+    <div class="card">
+      <span class="tag">Study Tips</span>
+      <h3>Time Table Banake Bhi Follow Nahi Hota? Yeh Try Karein</h3>
+      <p>Perfect time table ki jagah, ek system banayein jo real life mein chale.</p>
+      <a class="read" href="#article-5">Poora Padhein →</a>
+    </div>
+  </div>
+
+  <!-- ARTICLE 1 -->
+  <article id="article-1">
+    <span class="tag">Exam Prep</span>
+    <div class="divider"></div>
+    <h2>Bina Coaching ke SSC/Bank Exam ki Taiyari Kaise Karein</h2>
+    <p>Har saal lakhon students SSC, Bank PO, ya Railway exams ki taiyari coaching join karke shuru karte hain — lekin sach yeh hai ki coaching sirf structure deti hai, selection nahi. Agar aap self-discipline maintain kar sakte hain, toh bina coaching ke bhi selection possible hai.</p>
+
+    <h3>1. Syllabus aur Pattern Pehle Samjho</h3>
+    <p>Kisi bhi book ya video se pehle, official notification download karo aur syllabus line-by-line padho. Pichhle 3 saal ke question papers dekho — yeh pattern samajhne ka sabse fast tarika hai.</p>
+
+    <h3>2. Standard Books Se Shuru Karo</h3>
+    <ul>
+      <li>Quantitative Aptitude: R.S. Aggarwal ya Rakesh Yadav ki notes</li>
+      <li>Reasoning: R.S. Aggarwal</li>
+      <li>English: Word Power Made Easy + daily newspaper reading</li>
+      <li>General Awareness: Lucent's GK + monthly current affairs PDF</li>
+    </ul>
+
+    <h3>3. Free Resources Ka Sahi Use Karo</h3>
+    <p>YouTube pe kai teachers (jaise Study IQ, Wifistudy) free full courses dete hain jo paid coaching se kam nahi. In channels ki daily classes follow karo, notes khud banao — copy-paste mat karo, likhne se yaad rehta hai.</p>
+
+    <h3>4. Mock Tests Sabse Important Hain</h3>
+    <p>Sirf padhna kaafi nahi — weekly ek full-length mock test dena zaroori hai. Isse aapko pata chalega ki time management kahan weak hai aur kaunse topics revise karne hain.</p>
+
+    <h3>5. Revision Cycle Banao</h3>
+    <p>Jo bhi topic aaj padha, usse 3 din baad aur phir 10 din baad revise karo. Isse long-term memory mein baat rehti hai, exam ke time last-minute panic nahi hoga.</p>
+
+    <p><strong>Bottom line:</strong> Coaching se milta hai structure aur discipline — dono cheezein aap khud bhi bana sakte ho, thoda extra effort ke saath. Consistency hi asli coaching hai.</p>
+    <a class="back-top" href="#articles">↑ Aur articles dekhein</a>
+  </article>
+
+  <!-- ARTICLE 2 -->
+  <article id="article-2">
+    <span class="tag">Career</span>
+    <div class="divider"></div>
+    <h2>Freshers ke liye Resume Kaise Banayein (2026 Guide)</h2>
+    <p>Recruiters ek resume ko average 6-7 second dekhte hain pehli baar. Iska matlab hai aapka resume clear aur clutter-free hona chahiye — na ki fancy design se bhara hua.</p>
+
+    <h3>1. Format Simple Rakho</h3>
+    <p>Ek page, clean font (Calibri ya Arial), aur clear sections: Contact Info, Summary, Skills, Education, Projects, Certifications. Colorful templates avoid karo unless design field mein ho.</p>
+
+    <h3>2. Summary Mein Value Batao, Sirf Objective Nahi</h3>
+    <p>"Seeking a challenging role..." jaisi generic lines hata do. Iski jagah likho ki aap kya la sakte ho: "Computer Science graduate with hands-on project experience in Python and data analysis, seeking an entry-level analyst role."</p>
+
+    <h3>3. Projects Section Freshers ke Liye Sabse Important</h3>
+    <p>Agar work experience nahi hai, toh college projects, internships, ya personal projects detail mein likho — kya banaya, kaunsi tools use ki, kya result mila.</p>
+
+    <h3>4. Numbers Use Karo Jahan Possible Ho</h3>
+    <p>"Managed a team" ki jagah "Led a 4-member team to complete project 2 weeks ahead of deadline" likhna zyada impact banata hai.</p>
+
+    <h3>5. ATS-Friendly Banao</h3>
+    <p>Bahut si companies resume ko software (ATS) se pehle scan karti hain. Job description ke keywords resume mein naturally include karo, aur images/graphics avoid karo jo ATS read nahi kar pata.</p>
+
+    <p><strong>Bottom line:</strong> Resume ek marketing document hai — aapka, khud ke liye. Har line yeh answer honi chahiye: "Isse company ko kya fayda hoga?"</p>
+    <a class="back-top" href="#articles">↑ Aur articles dekhein</a>
+  </article>
+
+  <!-- ARTICLE 3 -->
+  <article id="article-3">
+    <span class="tag">Productivity</span>
+    <div class="divider"></div>
+    <h2>Padhte Waqt Phone se Distraction Kaise Roken</h2>
+    <p>Survey ke mutabik average student padhte waqt har 6 minute mein phone check karta hai. Yeh habit sabse zyada study time waste karti hai. Yahan hain practical tarike jo actually kaam karte hain.</p>
+
+    <h3>1. Phone Ko Doosre Kamre Mein Rakho</h3>
+    <p>"Silent pe rakh dunga" kaam nahi karta — notification na aane par bhi hum baar-baar phone uthate hain. Study session ke time phone physically door rakhna sabse effective solution hai.</p>
+
+    <h3>2. Pomodoro Technique Try Karo</h3>
+    <p>25 minute focused study, 5 minute break — is cycle mein phone sirf break ke time allow karo. Isse brain ko pata rehta hai ki reward jaldi milega, distraction ki need kam hoti hai.</p>
+
+    <h3>3. Apps Ki Jagah "App Timers" Set Karo</h3>
+    <p>Instagram, YouTube jaise apps pe daily time limit set karo (phone ki built-in Digital Wellbeing/Screen Time setting se). Limit khatam hote hi app lock ho jayega.</p>
+
+    <h3>4. Study Group Ko Accountability Banao</h3>
+    <p>Ek dost ke saath daily check-in karo — "aaj kitna padha". Kisi ko report dena hoga, yeh knowledge hi distraction kam karta hai.</p>
+
+    <h3>5. "Boring" Feeling Ko Accept Karo</h3>
+    <p>Padhai kabhi-kabhi boring lagegi — yeh normal hai. Phone isliye attract karta hai kyunki woh turant dopamine deta hai. Jaise hi bore ho, 2 minute deep breathing lo, phone mat uthao.</p>
+
+    <p><strong>Bottom line:</strong> Distraction khatam nahi hoga, lekin usse manage karna seekha ja sakta hai. Chhote-chhote systems bade result dete hain.</p>
+    <a class="back-top" href="#articles">↑ Aur articles dekhein</a>
+  </article>
+
+  <!-- ARTICLE 4 -->
+  <article id="article-4">
+    <span class="tag">Career</span>
+    <div class="divider"></div>
+    <h2>Government Job vs Private Job — Kaunsa Behtar Hai?</h2>
+    <p>Yeh sawaal har Indian student ke mann mein aata hai. Sach yeh hai ki koi ek "better" option nahi hai — depend karta hai aapki priorities pe.</p>
+
+    <h3>Government Job Ke Fayde</h3>
+    <ul>
+      <li>Job security — layoffs ka risk practically nahi</li>
+      <li>Fixed working hours, work-life balance achha</li>
+      <li>Pension aur retirement benefits</li>
+      <li>Social respect aur stability</li>
+    </ul>
+
+    <h3>Government Job Ke Nuksaan</h3>
+    <ul>
+      <li>Selection process lamba aur competitive hota hai</li>
+      <li>Salary growth slow hoti hai shuru mein</li>
+      <li>Transfer/posting kahin bhi ho sakti hai</li>
+    </ul>
+
+    <h3>Private Job Ke Fayde</h3>
+    <ul>
+      <li>Salary growth fast ho sakti hai, performance based</li>
+      <li>Skills aur learning opportunities zyada</li>
+      <li>City/company choose karne ki flexibility</li>
+    </ul>
+
+    <h3>Private Job Ke Nuksaan</h3>
+    <ul>
+      <li>Job security kam, layoffs ka risk</li>
+      <li>Work pressure aur hours zyada ho sakte hain</li>
+    </ul>
+
+    <p><strong>Bottom line:</strong> Agar stability aur work-life balance priority hai, government job better fit hai. Agar fast growth aur naye skills seekhna priority hai, private sector zyada opportunities deta hai. Dono paths mein successful log hain — depend karta hai aap kya value karte ho.</p>
+    <a class="back-top" href="#articles">↑ Aur articles dekhein</a>
+  </article>
+
+  <!-- ARTICLE 5 -->
+  <article id="article-5">
+    <span class="tag">Study Tips</span>
+    <div class="divider"></div>
+    <h2>Time Table Banake Bhi Follow Nahi Hota? Yeh Try Karein</h2>
+    <p>Bahut se students perfect, colorful time table banate hain — aur 2 din mein follow karna chhod dete hain. Problem time table mein nahi, approach mein hai.</p>
+
+    <h3>1. Time-Based Nahi, Task-Based Planning Karo</h3>
+    <p>"9 AM - 10 AM Maths" jaisa rigid schedule real life mein fail hota hai kyunki delays hote hain. Iski jagah likho: "Aaj 3 Maths chapters ke 20 questions solve karne hain" — jab bhi time mile, karo.</p>
+
+    <h3>2. Sabse Mushkil Kaam Pehle Karo</h3>
+    <p>Jo subject sabse zyada mushkil lagta hai, usse din ke shuru mein karo jab energy aur focus fresh ho. Easy subjects evening ke liye rakho.</p>
+
+    <h3>3. Weekly Review Karo, Daily Nahi</h3>
+    <p>Har raat perfect plan follow hua ya nahi, yeh check karke guilt feel karne ki jagah, week ke end mein review karo: "Is hafte kya kaam kiya, kya reh gaya" — aur agla week adjust karo.</p>
+
+    <h3>4. Buffer Time Rakho</h3>
+    <p>Plan mein har din 1-2 ghante ka buffer rakho unexpected cheezon ke liye. Isse ek din miss hone par pura schedule collapse nahi hota.</p>
+
+    <h3>5. Progress Track Karo, Perfection Nahi</h3>
+    <p>Ek simple checklist banao aur roz jo complete hua usse tick karo. Streak dekhna motivation banata hai — perfect din ka wait mat karo.</p>
+
+    <p><strong>Bottom line:</strong> Flexible, task-based system rigid time table se zyada tikta hai. Consistency chahiye, perfection nahi.</p>
+    <a class="back-top" href="#articles">↑ Aur articles dekhein</a>
+  </article>
+
+  <h2 class="section-title" id="about">About CareerDisha</h2>
+  <p style="color:var(--ink-soft); max-width:650px; margin-bottom:2rem;">CareerDisha ek simple mission ke saath bana hai — Indian students ko practical, no-nonsense guidance dena jo unhe padhai aur career ke real decisions mein madad kare. Koi paid course nahi, koi upsell nahi — sirf kaam ki baat.</p>
+</main>
+
+<footer>
+  <p>© 2026 CareerDisha. Made with care for Indian students.</p>
+</footer>
+
+</body>
+</html>
